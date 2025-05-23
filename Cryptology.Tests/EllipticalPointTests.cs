@@ -53,4 +53,14 @@ public class EllipticalPointTests
         var result = _fourth.IsCorrect(_e);
         Assert.That(result, Is.False);
     }
+
+    [Test]
+    public void ShouldCorrectMultiply()
+    {
+        var g = new Point(0, 1);
+        var e = new BasePoint(1, 1, 5);
+        var expected = new Point(2, 1);
+        var result = Point.Multiply(3, g, e);
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }

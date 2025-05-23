@@ -76,6 +76,12 @@ public class Point
         return first == second;
     }
 
+    public Point InversedY(BasePoint basePoint)
+    {
+        var y = (BigInteger.MinusOne * Y).Mod(basePoint.P);
+        return new Point(X, y, IsInfinity);
+    }
+
     public static Point FromJson(string json)
     {
         return Serializer.Deserialize<Point>(json);
@@ -97,6 +103,17 @@ public class Point
         {
             return Infinity;
         }
+    }
+
+    public static Point Multiply(BigInteger first, Point second, BasePoint basePoint)
+    {
+        if (first == BigInteger.Zero) return Infinity;
+        if (first < BigInteger.Zero) return Multiply(BigInteger.Abs(first), second.InversedY(basePoint), basePoint);
+        if (first == BigInteger.One) return second;
+        var result = second;
+        for (var i = BigInteger.One; i < first; i++) result = Add(result, second, basePoint);
+
+        return result;
     }
 
     public static bool operator ==(Point first, Point second)
