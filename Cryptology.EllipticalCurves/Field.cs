@@ -2,16 +2,16 @@
 
 namespace Cryptology.EllipticalCurves;
 
-public class BasePoint
+public class Field
 {
-    public BasePoint(BigInteger a, BigInteger b, BigInteger p)
+    public Field(BigInteger a, BigInteger b, BigInteger p)
     {
         A = a;
         B = b;
         P = p;
     }
 
-    public BasePoint(BasePoint basePoint) : this(basePoint.A, basePoint.B, basePoint.P)
+    public Field(Field field) : this(field.A, field.B, field.P)
     {
     }
 
@@ -21,12 +21,12 @@ public class BasePoint
 
     public BigInteger P { get; }
 
-    public static bool operator ==(BasePoint a, BasePoint b)
+    public static bool operator ==(Field a, Field b)
     {
         return a.A == b.A && a.B == b.B && a.P == b.P;
     }
 
-    public static bool operator !=(BasePoint a, BasePoint b)
+    public static bool operator !=(Field a, Field b)
     {
         return !(a == b);
     }
