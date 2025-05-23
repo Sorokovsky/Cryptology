@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptology.Encryptions", "Cryptology.Encryptions\Cryptology.Encryptions.csproj", "{A8A81430-36EE-480D-BE1B-D9253D6FB50D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptology.Application", "Cryptology.Application\Cryptology.Application.csproj", "{AA277065-C5D2-45F9-9C36-3563C4E72945}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptology.Common", "Cryptology.Common\Cryptology.Common.csproj", "{E18EA822-0C0E-411A-AB92-6E1B248E0E1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptology.Tests", "Cryptology.Tests\Cryptology.Tests.csproj", "{A09275D4-3D9F-4495-BB17-0A82FACD16B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8A81430-36EE-480D-BE1B-D9253D6FB50D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A81430-36EE-480D-BE1B-D9253D6FB50D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A81430-36EE-480D-BE1B-D9253D6FB50D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A81430-36EE-480D-BE1B-D9253D6FB50D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA277065-C5D2-45F9-9C36-3563C4E72945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA277065-C5D2-45F9-9C36-3563C4E72945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA277065-C5D2-45F9-9C36-3563C4E72945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA277065-C5D2-45F9-9C36-3563C4E72945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E18EA822-0C0E-411A-AB92-6E1B248E0E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E18EA822-0C0E-411A-AB92-6E1B248E0E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E18EA822-0C0E-411A-AB92-6E1B248E0E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E18EA822-0C0E-411A-AB92-6E1B248E0E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A09275D4-3D9F-4495-BB17-0A82FACD16B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A09275D4-3D9F-4495-BB17-0A82FACD16B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A09275D4-3D9F-4495-BB17-0A82FACD16B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A09275D4-3D9F-4495-BB17-0A82FACD16B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
