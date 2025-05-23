@@ -47,13 +47,13 @@ public class RsaEncryption : IEncryption
 
     public Key GeneratePublicKey(Key key)
     {
-        if(key is not RsaGeneralKey rsaGeneralKey) throw new ArgumentException(null, nameof(key));
+        if (key is not RsaGeneralKey rsaGeneralKey) throw new ArgumentException(null, nameof(key));
         return new RsaEncryptionKey(rsaGeneralKey.N, rsaGeneralKey.E);
     }
 
     public Key GeneratePrivateKey(Key key)
     {
-        if(key is not RsaGeneralKey rsaGeneralKey) throw new ArgumentException(null, nameof(key));
+        if (key is not RsaGeneralKey rsaGeneralKey) throw new ArgumentException(null, nameof(key));
         var d = rsaGeneralKey.E.Inverse(rsaGeneralKey.EulerOfN);
         return new RsaDecryptionKey(rsaGeneralKey.N, d);
     }
@@ -63,14 +63,11 @@ public class RsaEncryption : IEncryption
         var generator = new PrimeNumberGenerator();
         var p = generator.Generate(_keySize);
         var q = generator.Generate(_keySize);
-        while(p == q) q = generator.Generate(_keySize);
+        while (p == q) q = generator.Generate(_keySize);
         var n = p * q;
         var eulerOfN = (p - 1) * (q - 1);
         var e = generator.Generate(_keySize);
-        while (BigInteger.GreatestCommonDivisor(e, eulerOfN) != 1)
-        {
-            e = generator.Generate(_keySize);
-        }
+        while (BigInteger.GreatestCommonDivisor(e, eulerOfN) != 1) e = generator.Generate(_keySize);
         return new RsaGeneralKey(n, eulerOfN, e);
     }
 }

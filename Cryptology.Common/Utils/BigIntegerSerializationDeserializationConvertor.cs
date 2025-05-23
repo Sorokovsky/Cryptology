@@ -8,7 +8,7 @@ public class BigIntegerSerializationDeserializationConvertor : JsonConverter<Big
 {
     public override BigInteger Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        string? numberString = reader.GetString();
+        var numberString = reader.GetString();
         return BigInteger.Parse(numberString!);
     }
 

@@ -6,10 +6,6 @@ namespace Cryptology.Encryptions.Rsa;
 
 public class RsaDecryptionKey : Key
 {
-    public BigInteger N { get; }
-    
-    public BigInteger D { get; }
-
     [JsonConstructor]
     public RsaDecryptionKey(BigInteger n, BigInteger d)
     {
@@ -17,5 +13,12 @@ public class RsaDecryptionKey : Key
         D = d;
     }
 
-    public static RsaDecryptionKey FromJson(string json) => Serializer.Deserialize<RsaDecryptionKey>(json);
+    public BigInteger N { get; }
+
+    public BigInteger D { get; }
+
+    public static RsaDecryptionKey FromJson(string json)
+    {
+        return Serializer.Deserialize<RsaDecryptionKey>(json);
+    }
 }

@@ -3,7 +3,7 @@ using Cryptology.Encryptions.Rsa;
 
 var encoding = Encoding.UTF8;
 var encryption = new RsaEncryption();
-var n = 3233;
+const int n = 3233;
 var encryptionKey = new RsaEncryptionKey(n, 17);
 var privateKey = new RsaDecryptionKey(n, 2753);
 const string inputString = "Hello, my third world";

@@ -22,7 +22,7 @@ public static class BigIntegerExtensions
         Array.Copy(bytes, 0, padded, 0, bytes.Length);
         return padded;
     }
-    
+
     public static int GetBlockSize(this BigInteger n)
     {
         var nBytes = n.ToByteArray();

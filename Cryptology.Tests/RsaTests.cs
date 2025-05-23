@@ -7,13 +7,13 @@ namespace Cryptology.Tests;
 
 public class RsaTests
 {
-    private readonly IEncryption _encryption = new RsaEncryption();
+    private const string ExpectedDecryptedString = "Hello, my third world";
+    private const string ExpectedEncryptedString = "uAshBekC6QKJCKYCyAffCOcByAd0A3oIawxsCe0GyAdTBIkIbAnpAu0G";
+    private readonly Encoding _encoding = Encoding.UTF8;
+    private readonly RsaEncryption _encryption = new();
     private readonly BigInteger _n = 3233;
     private Key EncryptionKey => new RsaEncryptionKey(_n, 17);
     private Key DecryptionKey => new RsaDecryptionKey(_n, 2753);
-    private readonly Encoding _encoding = Encoding.UTF8;
-    private const string ExpectedDecryptedString = "Hello, my third world";
-    private const string ExpectedEncryptedString = "uAshBekC6QKJCKYCyAffCOcByAd0A3oIawxsCe0GyAdTBIkIbAnpAu0G";
 
     [Test]
     public void ShouldCorrectEncrypt()

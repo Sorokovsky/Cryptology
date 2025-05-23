@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Cryptology.Common\Cryptology.Common.csproj" />
+        <ProjectReference Include="..\Cryptology.Common\Cryptology.Common.csproj"/>
     </ItemGroup>
 
 </Project>

@@ -21,7 +21,7 @@ public class PrimeNumberGenerator : IBigIntegerGenerator
                 return candidate;
         }
     }
-    
+
     private static bool IsPrime(BigInteger number, int limit)
     {
         if (number < 2) return false;
@@ -34,6 +34,7 @@ public class PrimeNumberGenerator : IBigIntegerGenerator
             d /= 2;
             r++;
         }
+
         var randomizer = RandomNumberGenerator.Create();
         var bytes = new byte[number.GetByteCount()];
         for (var i = 0; i < limit; i++)
@@ -44,8 +45,9 @@ public class PrimeNumberGenerator : IBigIntegerGenerator
                 randomizer.GetBytes(bytes);
                 temp = new BigInteger(bytes) % (number - 3) + 2;
             } while (temp <= 1 || temp >= number - 1);
+
             var x = BigInteger.ModPow(temp, d, number);
-            if(x == 1 || x == number - 1) continue;
+            if (x == 1 || x == number - 1) continue;
             var passed = false;
             for (var j = 0; j < r - 1; j++)
             {
