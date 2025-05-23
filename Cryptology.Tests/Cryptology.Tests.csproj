@@ -22,6 +22,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Cryptology.Common\Cryptology.Common.csproj"/>
+        <ProjectReference Include="..\Cryptology.EllipticalCurves\Cryptology.EllipticalCurves.csproj"/>
         <ProjectReference Include="..\Cryptology.Encryptions\Cryptology.Encryptions.csproj"/>
     </ItemGroup>
 

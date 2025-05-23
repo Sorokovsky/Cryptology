@@ -66,8 +66,16 @@ public static class BigIntegerExtensions
         }
 
         if (x < 0)
+        {
             x += m0;
+        }
 
         return x;
+    }
+
+    public static BigInteger Mod(this BigInteger number, BigInteger mod)
+    {
+        while (number < BigInteger.Zero) number += mod;
+        return number % mod;
     }
 }

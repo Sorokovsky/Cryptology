@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Cryptology.EllipticalCurves\Cryptology.EllipticalCurves.csproj"/>
         <ProjectReference Include="..\Cryptology.Encryptions\Cryptology.Encryptions.csproj"/>
     </ItemGroup>
 
