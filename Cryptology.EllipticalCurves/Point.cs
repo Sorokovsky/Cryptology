@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using System.Text.Json.Serialization;
 using Cryptology.Common.Extensions;
 using Cryptology.Common.Utils;
 
@@ -6,6 +7,7 @@ namespace Cryptology.EllipticalCurves;
 
 public class Point
 {
+    [JsonConstructor]
     public Point(BigInteger x, BigInteger y, bool isInfinity = false)
     {
         X = x;
