@@ -6,6 +6,7 @@ namespace Cryptology.Encryptions.Rsa;
 
 public class RsaEncryption : IEncryption
 {
+    private readonly PrimeNumberGenerator _generator = new();
     private readonly int _keySize;
 
     public RsaEncryption(int keySize = 300)
@@ -60,14 +61,13 @@ public class RsaEncryption : IEncryption
 
     public Key GenerateGeneralForKeys()
     {
-        var generator = new PrimeNumberGenerator();
-        var p = generator.Generate(_keySize);
-        var q = generator.Generate(_keySize);
-        while (p == q) q = generator.Generate(_keySize);
+        var p = _generator.Generate(_keySize);
+        var q = _generator.Generate(_keySize);
+        while (p == q) q = _generator.Generate(_keySize);
         var n = p * q;
         var eulerOfN = (p - 1) * (q - 1);
-        var e = generator.Generate(_keySize);
-        while (BigInteger.GreatestCommonDivisor(e, eulerOfN) != 1) e = generator.Generate(_keySize);
+        var e = _generator.Generate(_keySize);
+        while (BigInteger.GreatestCommonDivisor(e, eulerOfN) != 1) e = _generator.Generate(_keySize);
         return new RsaGeneralKey(n, eulerOfN, e);
     }
 }

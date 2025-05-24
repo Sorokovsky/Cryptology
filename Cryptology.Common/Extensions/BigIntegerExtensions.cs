@@ -78,4 +78,23 @@ public static class BigIntegerExtensions
         while (number < BigInteger.Zero) number += mod;
         return number % mod;
     }
+
+    public static BigInteger CalculateGenerator(this BigInteger number)
+    {
+        for (var g = 0; g < number; g++)
+        {
+            var resultsOfPow = new List<BigInteger>();
+            for (var i = 0; i < number; i++)
+            {
+                var resultOfPow = BigInteger.ModPow(g, i, number);
+                if (resultsOfPow.Contains(resultOfPow)) continue;
+                resultsOfPow.Add(resultOfPow);
+            }
+
+            BigInteger result = g;
+            if (resultsOfPow.Count == number - 1) return result;
+        }
+
+        throw new InvalidOperationException("Generate generator failed");
+    }
 }
